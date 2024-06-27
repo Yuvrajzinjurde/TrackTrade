@@ -41,10 +41,10 @@ export const id = z.object({
 });
 
 export const updateMerchandiseSchema = z.object({
-    merchandiseName: z.string(),
-    merchandiseDescription: z.string(),
-    pointsRequired: z.number(),
-    merchandiseImage: z.string(),
+    merchandiseName: z.string().trim().min(1),
+    merchandiseDescription: z.string().trim().min(1),
+    pointsRequired: z.number().min(1),
+    merchandiseImage: z.string().trim().min(1),
     updatedBy: z.string().optional(),
     updatedAt: z.string().optional(),
 });
